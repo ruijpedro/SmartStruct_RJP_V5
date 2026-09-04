@@ -24,6 +24,7 @@ export const modules: ModuleItem[] = [
   { id: 'globalslopes', label: 'Taludes e Estabilidade Global', group: 'Geotecnia', status: 'ready' },
   { id: 'bridges', label: 'Pontes e Obras de Arte', group: 'Infraestruturas', status: 'ready' },
   { id: 'preliminarystudy', label: 'Estudo Prévio', group: 'Geral', status: 'ready' },
+  { id: 'planningbudget', label: 'Planeamento e Orçamento', group: 'Projeto e Obra', status: 'ready' },
   { id: 'rehabilitation', label: 'Reabilitação · Estruturas e Edifícios', group: 'Reabilitação', status: 'ready' },
   { id: 'walls', label: 'Muro em consola', group: 'Contenção', status: 'ready' },
   { id: 'containment', label: 'Muros e sistemas', group: 'Contenção', status: 'ready' },

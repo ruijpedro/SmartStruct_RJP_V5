@@ -35,7 +35,7 @@ function elementIfc(e:BIMElement,add:(s:string)=>number,hist:number,ctx:number,p
  else if(e.type==='beam'){w=Number(g.length||1);d=Number(g.b||.25);h=Number(g.h||.45);cls='IFCBEAM'}
  else if(e.type==='slab'){w=Number(g.width||1);d=Number(g.depth||1);h=Number(g.thickness||.18);cls='IFCSLAB'}
  else if(['isolated_footing','strip_footing','raft_foundation'].includes(e.type)){w=Number(g.width||1);d=Number(g.depth||1);h=Number(g.height||.5);cls='IFCFOOTING'}
- else if(['wall','masonry_unit','furniture','plumbing_fixture','door','window','material'].includes(e.type)){w=Number(g.width||.3);d=Number(g.depth||.3);h=Number(g.height||.3);cls='IFCBUILDINGELEMENTPROXY'} else return 0
+ else if(['wall','masonry_unit','furniture','plumbing_fixture','door','window','material','pipe','manhole','road_element'].includes(e.type)){w=Number(g.width||.3);d=Number(g.depth||.3);h=Number(g.height||.3);cls='IFCBUILDINGELEMENTPROXY'} else return 0
  const lp=localPlacement(add,add,x,y,z,parent),p2=add(`IFCCARTESIANPOINT((0.,0.))`),prof=add(`IFCRECTANGLEPROFILEDEF(.AREA.,$,#${add(`IFCAXIS2PLACEMENT2D(#${p2},$)`)},${n(w)},${n(d)})`),o=add(`IFCCARTESIANPOINT((0.,0.,0.))`),az=add(`IFCDIRECTION((0.,0.,1.))`),ax=add(`IFCAXIS2PLACEMENT3D(#${o},#${az},$)`),dir=add(`IFCDIRECTION((0.,0.,1.))`),solid=add(`IFCEXTRUDEDAREASOLID(#${prof},#${ax},#${dir},${n(h)})`),body=add(`IFCSHAPEREPRESENTATION(#${ctx},'Body','SweptSolid',(#${solid}))`),shape=add(`IFCPRODUCTDEFINITIONSHAPE($,$,(#${body}))`)
  const predefined=cls==='IFCSLAB'?',.FLOOR.':cls==='IFCFOOTING'?',.PAD_FOOTING.':''
  const ent=add(`${cls}('${guid()}',#${hist},'${esc(e.name)}','SmartStruct ID: ${esc(e.id)}',$,#${lp},#${shape},'${esc(e.id)}'${predefined})`)

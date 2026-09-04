@@ -13,6 +13,7 @@ export const MAIN_MENU = [
   { id:'roads', label:'Infraestruturas Viárias', group:'roads' },
   { id:'pavements', label:'Pavimentos', group:'roads' },
   { id:'projects', label:'Projetos', group:'support' },
+  { id:'planningbudget', label:'Planeamento e Orçamento', group:'support' },
   { id:'library', label:'Biblioteca Técnica', group:'support' },
   { id:'tools', label:'Ferramentas', group:'support' },
   { id:'settings', label:'Configurações', group:'support' }

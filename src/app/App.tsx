@@ -44,6 +44,7 @@ import { SteelStructuresPage } from '../modules/steelStructures'
 import {TimberPage,MasonryPage,CompositePage,SeismicPage,DeepFoundationsPage,GlobalSlopesPage,BridgesPage} from '../modules/specialties/SpecialtyPages'
 import PreliminaryStudyPage from '../modules/preliminaryStudy/PreliminaryStudyPage'
 import { RehabilitationPage } from '../modules/rehabilitation'
+import PlanningBudgetPage from '../modules/planningBudget/PlanningBudgetPage'
 
 function Planned({ title }: { title: string }) {
   return <div className="page"><div className="pageTitle"><h1>{title}</h1><span>Em preparação</span></div><section className="panel planned"><h2>Módulo ainda não integrado</h2><p>Este módulo será acrescentado numa fase própria, mantendo WebApp e APK compiláveis antes de avançar.</p></section></div>
@@ -82,6 +83,7 @@ export default function App() {
   if (active === 'globalslopes') content = <GlobalSlopesPage/>
   if (active === 'bridges') content = <BridgesPage/>
   if (active === 'preliminarystudy') content = <PreliminaryStudyPage/>
+  if (active === 'planningbudget') content = <PlanningBudgetPage/>
   if (active === 'rehabilitation') content = <RehabilitationPage/>
   if (active === 'walls') content = <WallsPage/>
   if (active === 'containment') content = <ContainmentPage/>

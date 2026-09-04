@@ -22,6 +22,7 @@ export type ModuleId =
   | 'globalslopes'
   | 'bridges'
   | 'preliminarystudy'
+  | 'planningbudget'
   | 'rehabilitation'
   | 'walls'
   | 'containment'
